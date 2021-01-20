@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    diff-lcs (1.4.4)
     ffi (1.14.2)
     listen (3.4.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
@@ -10,11 +11,26 @@ GEM
     rack (2.2.3)
     rack-protection (2.1.0)
       rack
+    rack-test (1.1.0)
+      rack (>= 1.0, < 3)
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     rerun (0.13.1)
       listen (~> 3.0)
+    rspec (3.10.0)
+      rspec-core (~> 3.10.0)
+      rspec-expectations (~> 3.10.0)
+      rspec-mocks (~> 3.10.0)
+    rspec-core (3.10.1)
+      rspec-support (~> 3.10.0)
+    rspec-expectations (3.10.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.10.0)
+    rspec-mocks (3.10.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.10.0)
+    rspec-support (3.10.1)
     ruby2_keywords (0.0.4)
     sinatra (2.1.0)
       mustermann (~> 1.0)
@@ -27,7 +43,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  rack-test (~> 1.1)
   rerun
+  rspec (~> 3.10)
   sinatra
 
 BUNDLED WITH
