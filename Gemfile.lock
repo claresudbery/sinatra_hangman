@@ -32,11 +32,13 @@ GEM
       rspec-support (~> 3.10.0)
     rspec-support (3.10.1)
     ruby2_keywords (0.0.4)
+    sequel (5.40.0)
     sinatra (2.1.0)
       mustermann (~> 1.0)
       rack (~> 2.2)
       rack-protection (= 2.1.0)
       tilt (~> 2.0)
+    sqlite3 (1.4.2)
     tilt (2.0.10)
 
 PLATFORMS
@@ -46,7 +48,9 @@ DEPENDENCIES
   rack-test (~> 1.1)
   rerun
   rspec (~> 3.10)
+  sequel (~> 5.40)
   sinatra
+  sqlite3 (~> 1.4)
 
 BUNDLED WITH
    2.1.4
