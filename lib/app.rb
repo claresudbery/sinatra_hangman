@@ -6,4 +6,8 @@ class App < Sinatra::Base
     get '/' do
         erb :index, layout: :layout, locals: {current_date: Time.new.strftime("%d/%m/%Y")}
     end
+
+    post '/admin/word' do
+        
+    end
 end

@@ -20,3 +20,4 @@
             3. correct letter 
     - View game
         - Game
+    - Create new word

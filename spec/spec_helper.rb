@@ -1,6 +1,7 @@
 require "rspec"
 require "rack/test"
 require 'zeitwerk'
+require 'json'
 
 loader = Zeitwerk::Loader.new
 loader.push_dir("#{__dir__}/../lib/")
