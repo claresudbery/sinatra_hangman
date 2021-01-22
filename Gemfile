@@ -9,3 +9,5 @@ gem "rack-test", "~> 1.1"
 gem "sequel", "~> 5.40"
 
 gem "sqlite3", "~> 1.4"
+
+gem "zeitwerk", "~> 2.4"
