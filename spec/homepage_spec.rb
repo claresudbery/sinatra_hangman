@@ -7,7 +7,7 @@ describe "homepage" do
     end
 
     it "displays game objective to users" do
-        expect(response.body).to include("Word")
+        expect(response.body).to include("phrase")
     end
 end
 
