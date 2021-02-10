@@ -11,3 +11,5 @@ describe "acceptance: words: creating" do
         expect(response.status).to eq 201
     end
 end
+
+
