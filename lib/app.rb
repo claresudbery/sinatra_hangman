@@ -8,6 +8,6 @@ class App < Sinatra::Base
     end
 
     post '/admin/word' do
-        
+        return 201        
     end
 end
