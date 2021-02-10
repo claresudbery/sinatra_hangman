@@ -10,7 +10,8 @@ class App < Sinatra::Base
 
     post '/admin/word' do
         @word = params["word"]
+        UseCase::CreateWord.new.execute(@word, "teaser")
         erb :index, layout: :layout, locals: {current_date: Time.new.strftime("%d/%m/%Y")}
-        # return 201        
+        return 201        
     end
 end

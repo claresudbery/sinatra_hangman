@@ -3,3 +3,8 @@
 <h3>Guess the word/phrase before your man gets hung!</h3>
 
 <h1>word: <%= @word %></h1>
+
+<form action="/admin/word" method="post">
+    <input type="text" name="word" value="<%= @word %>">
+    <input type="submit">
+</form>
