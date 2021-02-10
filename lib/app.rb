@@ -8,6 +8,8 @@ class App < Sinatra::Base
     end
 
     post '/admin/word' do
-        return 201        
+        @word = params["word"]
+        erb :index, layout: :layout, locals: {current_date: Time.new.strftime("%d/%m/%Y")}
+        # return 201        
     end
 end

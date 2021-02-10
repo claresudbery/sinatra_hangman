@@ -1,14 +1,15 @@
 describe "acceptance: words: creating" do
     include RSpecMixin
     let(:response) do
-        post "/admin/word", JSON.generate({
-            word: "meaning",
-            teaser: "what is meant by a word, text, concept, or action."
-        }) 
+        post "/admin/word", :word => "meaning"
     end
 
     it "returns a 201" do
         expect(response.status).to eq 201
+    end
+
+    it "shows new word when user adds to database" do
+        expect(response.body).to include("meaning")
     end
 end
 
