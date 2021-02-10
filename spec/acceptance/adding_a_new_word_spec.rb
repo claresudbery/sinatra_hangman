@@ -7,7 +7,7 @@ describe "acceptance: words: creating" do
         }) 
     end
 
-    it "succeeds" do
+    it "returns a 201" do
         expect(response.status).to eq 201
     end
 end
