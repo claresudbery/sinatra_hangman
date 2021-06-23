@@ -7,8 +7,8 @@ describe "acceptance: words: creating" do
         post "/admin/word", :word => "meaning"
     end
 
-    it "returns a 201" do
-        expect(post_response.status).to eq 201
+    it "returns a 200" do
+        expect(post_response.status).to eq 200
     end
 
     it "shows new word when user adds to database" do
