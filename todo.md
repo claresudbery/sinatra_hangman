@@ -1,5 +1,2 @@
-- insert more words into database
-- readout all words in DB
-- print words one after the other
-- given a word, pull the record for that word
-- Make word column unique (no duplicates of words)
+
+- display words added for admin user on page
