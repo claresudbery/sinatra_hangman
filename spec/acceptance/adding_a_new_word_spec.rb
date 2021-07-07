@@ -24,6 +24,10 @@ describe "acceptance: words: creating" do
     it "shows the default word when page is first hit" do
         expect(get_response.body).to include(App::DEFAULT_WORD)
     end
+
+    it "shows the default teaser when page is first hit" do
+        expect(get_response.body).to include(App::DEFAULT_TEASER)
+    end
  
     it "shows new word when user adds to database" do
         expect(post_response.body).to include(TEST_WORD)

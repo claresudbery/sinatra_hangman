@@ -7,6 +7,7 @@ class App < Sinatra::Base
     DEFAULT_TEASER = "no teaser added"
     get '/' do
         @word = DEFAULT_WORD
+        @teaser = DEFAULT_TEASER
         erb :index, layout: :layout, locals: {current_date: Time.new.strftime("%d/%m/%Y")}
     end
 
