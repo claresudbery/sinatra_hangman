@@ -13,6 +13,10 @@ describe "acceptance: words: creating" do
         expect(post_response.status).to eq 200
     end
 
+    it "doesn't show test word when page is first hit" do
+        expect(get_response.body).not_to include(TEST_WORD)
+    end
+ 
     it "shows new word when user adds to database" do
         expect(post_response.body).to include(TEST_WORD)
     end
