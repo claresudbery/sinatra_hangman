@@ -11,7 +11,7 @@ module UseCase
             table_count = @word_gateway.num_words
             random_index = @randomiser.random_int(table_count)
           
-            @word_gateway.fetch(random_index)
+            @word_gateway.fetch(0)
         end
     end
 end

@@ -1,5 +1,6 @@
 require "sinatra"
 require "sinatra/base"
+require_relative "./utils/randomiser"
 
 class App < Sinatra::Base
     set :erb, escape_html: true
@@ -19,6 +20,10 @@ class App < Sinatra::Base
 
     get '/' do
         game_screen
+    end
+
+    post '/random' do
+        @random_word = UseCase::FetchRandomWord.new(Randomiser.new).execute[:word]
     end
 
     get '/admin' do
