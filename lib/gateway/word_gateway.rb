@@ -1,8 +1,10 @@
+require_relative '../exceptions/empty_table_error'
+
 module Gateway
 
     class WordGateway
 
-        def initialize(table_name = :words )
+        def initialize(table_name = :words)
             @table_name = table_name
         end
 
@@ -11,7 +13,11 @@ module Gateway
         end
 
         def fetch(index)
-            Db::Connector.table(@table_name).offset(index).first
+            if self.num_words == 0
+                raise EmptyTableError
+            else
+                Db::Connector.table(@table_name).offset(index).first
+            end
         end
 
         def num_words()
