@@ -1,3 +1,5 @@
+require_relative '../../../lib/exceptions/empty_table_error'
+
 describe Gateway::WordGateway do
     before(:each) do
         @word_gateway = described_class.new 
@@ -12,7 +14,8 @@ describe Gateway::WordGateway do
         expect(count).to eq 11
     end
 
-    # it "throws an exception if user asks for word from an empty table" do
-    #     expect{@word_gateway.fetch(@word_gateway.num_words)}.to raise_error(EmptyTableError)
-    # end
+    it "throws an exception if user asks for word from an empty table" do
+        word_gateway = Gateway::WordGateway.new(:empty)
+        expect{word_gateway.fetch(word_gateway.num_words)}.to raise_error(EmptyTableError)
+    end
 end
