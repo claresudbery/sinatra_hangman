@@ -10,10 +10,7 @@ describe "homepage" do
         expect(default_response.body).to include("phrase")
     end
 
-    let(:admin_response) {get '/admin'}
-    it "successfully goes to admin page" do
-        expect(admin_response).to have_http_status(200)
-    end
+   
 
    
 end
