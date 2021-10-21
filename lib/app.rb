@@ -9,7 +9,7 @@ class App < Sinatra::Base
     def admin_screen
         @word = DEFAULT_WORD
         @teaser = DEFAULT_TEASER
-        erb :index, layout: :layout, locals: {current_date: Time.new.strftime("%d/%m/%Y")}
+        erb :admin, layout: :layout, locals: {current_date: Time.new.strftime("%d/%m/%Y")}
     end
 
     get '/' do
