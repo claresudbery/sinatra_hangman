@@ -12,8 +12,13 @@ class App < Sinatra::Base
         erb :admin, layout: :layout, locals: {current_date: Time.new.strftime("%d/%m/%Y")}
     end
 
+    def game_screen
+        erb :index, layout: :layout, locals: {current_date: Time.new.strftime("%d/%m/%Y")}
+    end
+
+
     get '/' do
-        admin_screen
+        game_screen
     end
 
     get '/admin' do

@@ -3,7 +3,7 @@ describe "acceptance: words: creating" do
     TEST_TEASER = "a sport with a bat and ball"
     include RSpecMixin
     let(:get_response) do
-        get "/"
+        get "/admin"
     end
     let(:post_response) do
         post "/admin/word", :word => TEST_WORD, :teaser => TEST_TEASER

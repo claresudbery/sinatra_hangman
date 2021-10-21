@@ -1,10 +1,2 @@
 <h1>Today's date is:</h1> <%= current_date  %>
 <h3>Guess the word/phrase before your man gets hung!</h3>
-
-<form action="/admin/word" method="post">
-    <h1>word: <%= @word %></h1>
-    <input type="text" name="word" value="<%= @word %>">
-    <h1>teaser: <%= @teaser %></h1>
-    <input type="text" name="teaser" value="<%= @teaser %>">
-    <input type="submit">
-</form>
