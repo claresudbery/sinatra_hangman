@@ -9,7 +9,7 @@ module UseCase
 
         def execute()
             table_count = @word_gateway.num_words
-            random_index = @randomiser.random_int(table_count)
+            random_index = @randomiser.random_int(table_count - 1)
             @word_gateway.fetch(random_index)
         end
     end

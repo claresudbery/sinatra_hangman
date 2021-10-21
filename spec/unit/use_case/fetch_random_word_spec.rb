@@ -20,5 +20,27 @@ describe UseCase::FetchRandomWord do
             #assert
             expect(returned_word[:word]).to eq(word)
         end
-    end    
+    end  
+    
+    it "offsets maximum by 1 when calling randomiser" do
+        #arrange
+        test_word_table_size = 11
+        
+        #assert
+        expect(@randomiser_stub).to receive(:random_int).with(test_word_table_size - 1)
+
+        #act
+        @use_case.execute()
+    end
+
+    it "should use table size when calling randomiser" do
+        #arrange
+        test_word_table_size = 11
+        
+        #assert
+        expect(@randomiser_stub).not_to receive(:random_int).with(test_word_table_size)
+
+        #act
+        @use_case.execute()
+    end
 end
