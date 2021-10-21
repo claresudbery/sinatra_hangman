@@ -9,5 +9,7 @@ describe "homepage" do
     it "displays game objective to users" do
         expect(default_response.body).to include("phrase")
     end
+
+    
 end
 
