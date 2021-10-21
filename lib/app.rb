@@ -16,6 +16,10 @@ class App < Sinatra::Base
         admin_screen
     end
 
+    get '/admin' do
+        admin_screen
+    end
+
     post '/admin/word' do
         @word = params["word"]
         @teaser = params["teaser"]

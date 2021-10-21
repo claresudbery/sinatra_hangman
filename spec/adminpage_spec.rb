@@ -4,6 +4,6 @@ describe "admin page" do
     let(:admin_response) {get '/admin'}
 
     it "successfully goes to admin page" do
-        expect(admin_response).to have_http_status(200)
+        expect(admin_response).to be_ok
     end
 end
