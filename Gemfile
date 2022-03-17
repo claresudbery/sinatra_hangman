@@ -13,3 +13,5 @@ gem "sqlite3", "~> 1.4"
 gem "zeitwerk", "~> 2.4"
 
 gem "rspec-html-matchers"
+
+gem "rspec_junit_formatter"
