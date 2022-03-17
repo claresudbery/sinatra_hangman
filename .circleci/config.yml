@@ -5,9 +5,7 @@ orbs:
 jobs:
   build_and_test:
     docker:
-      # - image: cimg/ruby:2.6.5-stretch-node
       - image: cimg/ruby:2.7-node
-      # - image: circleci/ruby:2.6.5-stretch-node
     steps:
       - checkout
       - ruby/install-deps
