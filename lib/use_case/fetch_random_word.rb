@@ -4,7 +4,6 @@ module UseCase
         def initialize(randomiser)
             @word_gateway = Gateway::WordGateway.new
             @randomiser = randomiser
-
         end
 
         def execute()
