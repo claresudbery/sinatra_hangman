@@ -16,4 +16,4 @@ describe Randomiser do
         #assert
         expect(random_index).to eq(0)
     end
-enda
+end
