@@ -9,10 +9,6 @@ describe "acceptance: words: creating" do
         post "/admin/word", :word => TestConstants::WORD, :teaser => TestConstants::TEASER
     end
 
-    it "returns a 200" do
-        expect(post_response.status).to eq 200
-    end
-
     it "doesn't show test word when page is first hit" do
         expect(get_response.body).not_to include(TestConstants::WORD)
     end
@@ -28,13 +24,17 @@ describe "acceptance: words: creating" do
     it "shows the default teaser when page is first hit" do
         expect(get_response.body).to include(App::DEFAULT_TEASER)
     end
- 
-    it "shows new word when user adds to database" do
-        expect(post_response.body).to include(TestConstants::WORD)
-    end
 
     it "shows no word on get" do
         expect(get_response.body).to include("no word added")
+    end
+
+    it "returns a 200" do
+        expect(post_response.status).to eq 200
+    end
+ 
+    it "shows new word when user adds to database" do
+        expect(post_response.body).to include(TestConstants::WORD)
     end
 
     it "shows teaser when new word is added" do
