@@ -23,7 +23,7 @@ class App < Sinatra::Base
     end
 
     get '/random' do
-        @random_word = UseCase::FetchRandomWord.new(Randomiser.new).execute[:word]
+        @random_word = UseCase::FetchRandomWord.new(Randomiser.new, Gateway::WordGateway.new).execute[:word]
     end
 
     get '/admin' do

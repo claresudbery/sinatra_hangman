@@ -3,7 +3,8 @@ describe UseCase::FetchRandomWord do
 
     before(:each) do 
         @randomiser_stub = double('Randomiser')
-        @use_case = described_class.new(@randomiser_stub)
+        @word_gateway_stub = double('Gateway::WordGateway')
+        @use_case = described_class.new(@randomiser_stub, Gateway::WordGateway.new) #@word_gateway_stub)
     end
 
     EXPECTED_WORDS = {4 => "democracy",
@@ -33,7 +34,7 @@ describe UseCase::FetchRandomWord do
         @use_case.execute()
     end
 
-    it "should use table size when calling randomiser" do
+    it "will use table size when calling randomiser" do
         #arrange
         test_word_table_size = 11
         
@@ -42,5 +43,17 @@ describe UseCase::FetchRandomWord do
 
         #act
         @use_case.execute()
+    end
+
+    it "will return 'no words' when table size is 0" do
+        #arrange
+        @use_case = described_class.new(Randomiser.new, @word_gateway_stub)
+        allow(@word_gateway_stub).to receive(:num_words).and_return(0)
+        
+        #assert
+        returned_word = @use_case.execute()
+
+        #assert
+        expect(returned_word[:word]).to eq(TestConstants::NO_WORDS)
     end
 end
