@@ -22,7 +22,7 @@ class App < Sinatra::Base
         game_screen
     end
 
-    post '/random' do
+    get '/random' do
         @random_word = UseCase::FetchRandomWord.new(Randomiser.new).execute[:word]
     end
 
