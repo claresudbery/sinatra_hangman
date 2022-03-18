@@ -4,29 +4,27 @@ describe "acceptance: words: creating" do
     include RSpecMixin
     before(:all) do
         @post_response = post "/admin/word", :word => TestConstants::WORD, :teaser => TestConstants::TEASER
-    end
-    let(:get_response) do
-        get "/admin"
+        @get_response = get "/admin"
     end
 
     it "doesn't show test word when page is first hit" do
-        expect(get_response.body).not_to include(TestConstants::WORD)
+        expect(@get_response.body).not_to include(TestConstants::WORD)
     end
 
     it "doesn't show test teaser when page is first hit" do
-        expect(get_response.body).not_to include(TestConstants::TEASER)
+        expect(@get_response.body).not_to include(TestConstants::TEASER)
     end
 
     it "shows the default word when page is first hit" do
-        expect(get_response.body).to include(App::DEFAULT_WORD)
+        expect(@get_response.body).to include(App::DEFAULT_WORD)
     end
 
     it "shows the default teaser when page is first hit" do
-        expect(get_response.body).to include(App::DEFAULT_TEASER)
+        expect(@get_response.body).to include(App::DEFAULT_TEASER)
     end
 
     it "shows no word on get" do
-        expect(get_response.body).to include("no word added")
+        expect(@get_response.body).to include("no word added")
     end
 
     it "returns a 200" do
