@@ -19,3 +19,5 @@ gem "zeitwerk", "~> 2.4"
 gem "rspec-html-matchers"
 
 gem "rspec_junit_formatter"
+
+gem "puma"
