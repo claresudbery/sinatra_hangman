@@ -1,12 +1,12 @@
+require_relative '../test_constants'
+
 describe "acceptance: words: creating" do
-    TEST_WORD = "cricket"
-    TEST_TEASER = "a sport with a bat and ball"
     include RSpecMixin
     let(:get_response) do
         get "/admin"
     end
     let(:post_response) do
-        post "/admin/word", :word => TEST_WORD, :teaser => TEST_TEASER
+        post "/admin/word", :word => TestConstants::WORD, :teaser => TestConstants::TEASER
     end
 
     it "returns a 200" do
@@ -14,11 +14,11 @@ describe "acceptance: words: creating" do
     end
 
     it "doesn't show test word when page is first hit" do
-        expect(get_response.body).not_to include(TEST_WORD)
+        expect(get_response.body).not_to include(TestConstants::WORD)
     end
 
     it "doesn't show test teaser when page is first hit" do
-        expect(get_response.body).not_to include(TEST_TEASER)
+        expect(get_response.body).not_to include(TestConstants::TEASER)
     end
 
     it "shows the default word when page is first hit" do
@@ -30,7 +30,7 @@ describe "acceptance: words: creating" do
     end
  
     it "shows new word when user adds to database" do
-        expect(post_response.body).to include(TEST_WORD)
+        expect(post_response.body).to include(TestConstants::WORD)
     end
 
     it "shows no word on get" do
@@ -38,7 +38,7 @@ describe "acceptance: words: creating" do
     end
 
     it "shows teaser when new word is added" do
-        expect(post_response.body).to include(TEST_TEASER)
+        expect(post_response.body).to include(TestConstants::TEASER)
     end
 end
 
