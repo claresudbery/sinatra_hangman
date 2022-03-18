@@ -2,11 +2,11 @@ require_relative '../test_constants'
 
 describe "acceptance: words: creating" do
     include RSpecMixin
+    before(:all) do
+        @post_response = post "/admin/word", :word => TestConstants::WORD, :teaser => TestConstants::TEASER
+    end
     let(:get_response) do
         get "/admin"
-    end
-    let(:post_response) do
-        post "/admin/word", :word => TestConstants::WORD, :teaser => TestConstants::TEASER
     end
 
     it "doesn't show test word when page is first hit" do
@@ -30,15 +30,15 @@ describe "acceptance: words: creating" do
     end
 
     it "returns a 200" do
-        expect(post_response.status).to eq 200
+        expect(@post_response.status).to eq 200
     end
  
     it "shows new word when user adds to database" do
-        expect(post_response.body).to include(TestConstants::WORD)
+        expect(@post_response.body).to include(TestConstants::WORD)
     end
 
     it "shows teaser when new word is added" do
-        expect(post_response.body).to include(TestConstants::TEASER)
+        expect(@post_response.body).to include(TestConstants::TEASER)
     end
 end
 
