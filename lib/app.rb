@@ -22,8 +22,9 @@ class App < Sinatra::Base
         game_screen
     end
 
-    get '/random' do
+    post '/random' do
         @random_word = UseCase::FetchRandomWord.new(Randomiser.new, Gateway::WordGateway.new).execute[:word]
+        game_screen
     end
 
     get '/admin' do
